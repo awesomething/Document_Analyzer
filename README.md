@@ -115,6 +115,7 @@ The Question Answering tab allows you to ask questions about the context using g
 The application is provided as is without any support.
 Feel free to use it as a starting point for your own application.
 
+## Working with Azure Function
 The url parameter in the HttpRequest object represents the URL endpoint of your Azure Function. This URL is specific to your Azure Function app and the HTTP trigger function you're calling within it.
 
 To obtain the correct URL for your Azure Function, you typically need to deploy your Azure Function app to Azure, and then you can find the URL in the Azure portal or through the Azure CLI.
