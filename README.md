@@ -114,3 +114,32 @@ The Question Answering tab allows you to ask questions about the context using g
 ## Support
 The application is provided as is without any support.
 Feel free to use it as a starting point for your own application.
+
+The url parameter in the HttpRequest object represents the URL endpoint of your Azure Function. This URL is specific to your Azure Function app and the HTTP trigger function you're calling within it.
+
+To obtain the correct URL for your Azure Function, you typically need to deploy your Azure Function app to Azure, and then you can find the URL in the Azure portal or through the Azure CLI.
+
+Here's how you can obtain the URL for your Azure Function:
+
+Deploy Your Azure Function: Make sure your Azure Function app containing your func_app.py script is deployed to Azure. You can deploy it using tools like Azure CLI, Azure PowerShell, or directly from Visual Studio Code.
+
+Find the URL in Azure Portal:
+
+Go to the Azure portal (https://portal.azure.com).
+Navigate to your Azure Function app.
+Find the specific HTTP trigger function (in your case, it's the function defined in func_app.py).
+The URL for your function should be listed in the overview or properties section of the function in the Azure portal.
+Find the URL Using Azure CLI:
+If you prefer using the Azure CLI, you can use the following command to get the URL of your function:
+
+RUN
+az functionapp show --name <your-function-app-name> --resource-group <your-resource-group> --query hostNames
+
+Replace <your-function-app-name> with the name of your Azure Function app and <your-resource-group> with the name of your Azure resource group.
+
+Once you have the URL of your Azure Function, you can replace '/api/your-function' in the url parameter of the HttpRequest object with the actual URL of your function.
+
+REPLACE url = '/api/my-function'  # Replace 'my-function' with the actual name of your function endpoint
+
+After updating the URL, you can use this HttpRequest object to call your Azure Function in the cloud
+
